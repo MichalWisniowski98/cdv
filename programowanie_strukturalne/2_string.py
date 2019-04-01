@@ -53,4 +53,5 @@ miesiac = "kwiecien"
 dzien = 1
 
 print("\nData: ", end="")
-print(dzien, miesiac, rok)
+print(dzien, miesiac, rok, sep="-")
+print()
