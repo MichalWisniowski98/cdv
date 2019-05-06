@@ -33,3 +33,26 @@ Użytkownik podaje z klawiatury:
 		Pojemność: ...
 		Prędkość maksymalna: ...
 '''
+
+marka = input("Wprwadz marke: ")
+model = input("Wprowadz model: ")
+pojemnosc = input("Wprowadz pojemnosc: ")
+predkosc_max = input("Wprowadz predkosc max: ")
+
+def wprowadzanie(marka1, model1, pojemnosc1, predkosc_max1):
+	slownik = {
+		'marka2' : marka1,
+		'model2' : model1,
+		'pojemnosc2' : pojemnosc1,
+		'predkosc_max2' : predkosc_max1,
+	}
+
+wprowadzanie(marka, model, pojemnosc, predkosc_max)
+
+def wyswietl():
+	print('Marka: ' + wprowadzanie.slownik['marka2'])
+	print('Model: ' + wprowadzanie.slownik['model2'])
+	print('Pojemnosc: ' + wprowadzanie.slownik['pojemnosc2'])
+	print('Predkosc_max: ' + wprowadzanie.slownik['predkosc_max2'])
+
+wyswietl()
