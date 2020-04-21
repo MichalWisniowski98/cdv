@@ -1,4 +1,5 @@
 table, tr, th, td{
+    width: 10px;
     border: solid thin gray;
     padding: 8px;
     border-collapse: collapse;
