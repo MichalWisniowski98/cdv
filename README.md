@@ -1,1 +1,1 @@
-# Zbiór zadań z cdv.
+# Zbiór zadań z CDV.
