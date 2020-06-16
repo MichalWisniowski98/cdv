@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(!$_SESSION['logged']['email'] || $_SESSION['logged']['permission'] != 1){
+    header("location: ../")
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

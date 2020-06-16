@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(isset($_SESSION['logged']['email'])){
+    header('location: ./scripts/login.php');
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,11 +31,17 @@
   </div>
 
   <?php
-     if(isset($_GET['register'])){
+     if(isset($_GET['register']) || isset($_GET('logout']))){
+      if(isset($_GET['register'])){
+        $comment = 'Prawidłowo doano użytkownika';
+      }
+      else{
+        $comment = 'Prawidłowo wylogowano użytkownika';
+      }
       echo<<<SUCCESS
       <div class="cinfo-box bg success">
         <div class="info-box-content">
-          <h3 class="card-title">Prawidłowo dodano użykownika</h3>
+          <span class="info-box-number">$comment</span>
         </div>
       <div
     SUCCESS;
@@ -45,6 +57,7 @@
       ERROR;
         unset($_SESSION['error']);
       }
+  ?>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">

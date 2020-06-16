@@ -3,7 +3,6 @@
     if(!empty($_POST['email']) $$ !empty($_POST['pass'])){
         $email = $_POST['email'];
         $pass = $_POST['pass'];
-        echo 'ok';
         require_once './connect.php';
 
         //sprawdzenie czy istnieje w bazie danych email podany przez użytkownika
@@ -73,9 +72,9 @@
         }
     }
     else{
+        $_SESSION['error'] = "Wypełnij wszystkie pola";    
         ?>
             <script>
-                $_SESSION['error'] = "Wypełnij wszystkie pola";    
                 history.back();
             </script>
         <?php

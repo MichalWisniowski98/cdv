@@ -35,6 +35,9 @@ if (!empty($_POST['name']) && !empty($_POST['surname']) && !empty($_POST['email1
     $email1 = $_POST['email1'];
     $birthday = $_POST['birthday'];
 
+    //szyfrowanie hasła za pomocą Argon2ID
+    $pass = password_hash($pass, PASSWORD_ARGON2ID);
+
     require_once './connect.php';
 
     if($conn->connect_errno){
@@ -52,6 +55,7 @@ if (!empty($_POST['name']) && !empty($_POST['surname']) && !empty($_POST['email1
         $conn->close();
         $stmt->close();
         header('location: ../?register=success');
+        exit();
     }
     else{
         //sprawdzenie czy istnieje w bazie danych email podany przez użytkowanika
